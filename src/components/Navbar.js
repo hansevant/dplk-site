@@ -14,7 +14,7 @@ const Navbar = () => {
                 ))}
             </ul>
         <div>
-            <a href='##' className='text-lg bg-gray-100 text-blue-800 font-semibold rounded-md px-7 py-2'>
+            <a href='/login' className='text-lg bg-gray-100 text-blue-800 font-semibold rounded-md px-7 py-2'>
             Masuk
             </a>
         </div>
