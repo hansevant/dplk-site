@@ -1,0 +1,6 @@
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+  /* Customize other slick-carousel styles as needed */
+  
