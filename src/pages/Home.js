@@ -2,9 +2,10 @@ import React, { useRef } from 'react'
 import Navbar from '../components/Navbar';
 import Image from '../assets/img/Image.png'
 import Phone from '../assets/img/Phone.png'
+import Group from '../assets/img/Group.png'
 import AppStore from '../assets/img/app_store.png'
 import GooglePlay from '../assets/img/google_play.png'
-import { FiPlayCircle } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight, FiPlayCircle } from 'react-icons/fi';
 import PackageCard from '../components/HomePage/PackageCard';
 import FeatureCard from '../components/HomePage/FeatureCard';
 import Slider from "react-slick";
@@ -34,6 +35,14 @@ const Home = () => {
     { id: 6, text: 'DPLK BRI Kombinasi', points: ["Gabungan antara konvensional dan syariah."] },
   ];
 
+  const invest = [
+    {id: 1, name:"DPLK BRI PSU", r3: 0.44 , r1: 4.03},
+    {id: 2, name:"DPLK BRI PENDAPATAN TETAP", r3: 0.47, r1: 6.89},
+    {id: 3, name:"DPLK BRI SAHAM", r3: 5, r1: 14.3},
+    {id: 4, name:"DPLK BRI PSU SYARIAH", r3: 3.69, r1: 5.67},
+    {id: 5, name:"DPLK BRI BERIMBANG SYARIAH", r3: 0.23, r1: 5.67},
+  ]
+
   const testimonials = [
     {id: 1, name:"Prisca Yuliana", star: 5},
     {id: 2, name:"Fachrie Malyan", star: 4},
@@ -61,11 +70,16 @@ const Home = () => {
     nextArrow: null, // Set to null to hide the next arrow
   };
 
+  const containerStyle = {
+    backgroundImage: `url(${Group})`, // Set the background image using template literals
+    backgroundSize: 'contain', // You can add other background-related styles here
+  };
+
   return (
     <>
         <Navbar />
-        <section className="bg-white">
-          <div className="max-w-screen-lg px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:flex justify-between items-center">
+        <section className="bg-white" style={containerStyle}>
+          <div className="max-w-screen-lg px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:flex justify-between items-center">
 
             <div className="lg:col-span-5">
               <h1 className="text-gray-700 text-5xl font-bold font-['DM Sans'] leading-10">Selamat Datang di DPLK BRI</h1>
@@ -121,6 +135,72 @@ const Home = () => {
             
         </div>
       </section>
+
+      <section className="py-12 bg-slate-50">
+        <div className="container my-12 mx-auto md:px-6">
+            <h5 className="text-center text-sky-800 text-sm font-bold font-['DM Sans'] uppercase leading-tight tracking-widest">
+            Paket Investasi
+            </h5>
+            <h2 className="text-center mb-6 text-gray-700 text-3xl font-bold font-['DM Sans'] leading-10">NAV Harian (Rupiah)
+            </h2>
+
+            <div className="container mx-auto px-4 py-8 bg-white border rounded-lg">
+            <p className="text-slate-800 text-lg mb-4 font-medium font-['DM Sans'] leading-tight">Paket Investasi</p>
+              <div className="w-full mx-auto">
+                <table className="min-w-full bg-white">
+                  <thead>
+                    <tr className="border-y">
+                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
+                        Name
+                      </th>
+                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
+                        NAV/Unit
+                      </th>
+                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
+                        Return 1 Hari Terakhir
+                      </th>
+                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
+                      Return 30 Hari Terakhir
+                      </th>
+                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
+                        Return 1 Tahun Terakhir
+                      </th>
+                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
+                        Return 3 Tahun Terakhir
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {invest.map((inv) => (
+                      <tr key={inv.id} className="border-t border-gray-200 text-gray-700 text-sm font-normal font-['DM Sans'] leading-tight">
+                        <td className="px-6 py-4 whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
+                          {inv.name}
+                        </td>
+                        <td className="px-6 py-4 text-center whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
+                          99
+                        </td>
+                        <td className="px-6 py-4 text-center whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
+                          0.01
+                        </td>
+                        <td className="px-6 py-4 text-center whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
+                          {inv.r3}
+                        </td>
+                        <td className="px-6 py-4 text-center whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
+                          {inv.r1}
+                        </td>
+                        <td className="px-6 py-4 text-center whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
+                          14.18
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+        </div>
+      </section>
+
       <section className="mb-16">
         <div className="container my-12 mx-auto md:px-6">
             <h5 className="text-center text-sky-800 text-sm font-bold font-['DM Sans'] uppercase leading-tight tracking-widest">
@@ -138,12 +218,12 @@ const Home = () => {
                 ))}
               </Slider>
 
-              <div className="slider-controls mt-4 flex gap-2 justify-center">
-                <button className="slider-button bg-blue-500 text-white py-2 px-4 rounded" onClick={previous}>
-                  Previous
+              <div className="slider-controls mt-4 flex justify-center">
+                <button className="slider-button text-4xl text-slate-300 hover:text-slate-400 transition py-2 px-4 rounded" onClick={previous}>
+                  <FiArrowLeft/>
                 </button>
-                <button className="slider-button bg-blue-500 text-white py-2 px-4 rounded" onClick={next}>
-                  Next
+                <button className="slider-button text-4xl text-slate-300 hover:text-slate-400 transition py-2 px-4 rounded" onClick={next}>
+                  <FiArrowRight />
                 </button>
               </div>
             </div>
