@@ -93,10 +93,7 @@ const Login = () => {
         </form>
       </div>
 
-      {/* Right Side - Background Image */}
-      <div className="hidden lg:flex lg:w-1/2 bg-cover bg-right" style={{ backgroundImage: 'url(https://www.bri.co.id/documents/20123/aa97b88b-cc8f-5bc1-bf99-dec08110584b?download=false)' }}>
-        {/* You can replace 'your-image-url.jpg' with your actual image URL */}
-      </div>
+      <div className="hidden lg:flex lg:w-1/2 bg-cover bg-right" style={{ backgroundImage: 'url(https://www.bri.co.id/documents/20123/aa97b88b-cc8f-5bc1-bf99-dec08110584b?download=false)' }} />
     </div>
     
   )

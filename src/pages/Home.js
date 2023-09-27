@@ -6,42 +6,15 @@ import Group from '../assets/img/Group.png'
 import AppStore from '../assets/img/app_store.png'
 import GooglePlay from '../assets/img/google_play.png'
 import { FiArrowLeft, FiArrowRight, FiPlayCircle } from 'react-icons/fi';
-import PackageCard from '../components/HomePage/PackageCard';
-import FeatureCard from '../components/HomePage/FeatureCard';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import '../assets/css/Slider.css'
-import SliderCard from '../components/HomePage/SliderCard';
+import SliderCard from '../components/HomePage/Card/SliderCard';
+import Features from '../components/HomePage/Features';
+import Packages from '../components/HomePage/Packages';
+import Invest from '../components/HomePage/Invest';
 
 const Home = () => {
-
-  
-
-  const features = [
-    { id: 1, text: 'Aman', desc : "Dikelola oleh manajemen Bank BRI, serta seluruh transaksi dilakukan melalui overbooking untuk meningkatkan keamanan transaksi."},
-    { id: 2, text: 'Akses Luas', desc : "Jaringan kerja konvensional maupun e-channel BRI tersebar di seluruh Indonesia, memudahkan peserta DPLK BRI dalam bertransaksi."},
-    { id: 3, text: 'Investasi Beragam dan Prudent', desc:  "DPLK BRI mengutamakan prinsip kehati-hatian dalam penempatan dana dengan 6 pilihan investasi"},
-    { id: 4, text: 'Return Optimal', desc: "Secara historis, DPLK BRI memberikan return yang baik."},
-    { id: 5, text: 'Pengelolaan Modern', desc: "Pengelolaan investasi DPLK BRI memakai konsep pengelolaan reksadana yang dihitung harian dan dikirim secara periodik"},
-    { id: 6, text: 'Berpengalaman', desc: "Pengalaman bekerjasama dengan lebih dari 200 korporasi terkemuka di Indonesia"},
-  ];
-
-  const packages = [
-    { id: 1, text: 'DPLK BRI Pasar uang', points : ["Efek Pasar uang: 100%"] },
-    { id: 2, text: 'DPLK BRI Pendapatan Tetap', points : ["Efek Pendapatan Tetap: 60 - 100%", "Efek Pasar Uang: 0 - 40%"] },
-    { id: 3, text: 'DPLK BRI Saham', points: ["Efek Saham: 60 - 100%","Efek Pasar Uang: 0 - 40%"] },
-    { id: 4, text: 'DPLK BRI Pasar Uang Syariah', points: ["Efek Pasar Uang Syariah : 100%"] },
-    { id: 5, text: 'DPLK BRI Berimbang Syariah', points: ["Efek Pasar Uang Syariah : 0 -100%","Efek Pendapatan Tetap Syariah : 0 - 50%", "Efek Saham Syariah : 0 - 50%"] },
-    { id: 6, text: 'DPLK BRI Kombinasi', points: ["Gabungan antara konvensional dan syariah."] },
-  ];
-
-  const invest = [
-    {id: 1, name:"DPLK BRI PSU", r3: 0.44 , r1: 4.03},
-    {id: 2, name:"DPLK BRI PENDAPATAN TETAP", r3: 0.47, r1: 6.89},
-    {id: 3, name:"DPLK BRI SAHAM", r3: 5, r1: 14.3},
-    {id: 4, name:"DPLK BRI PSU SYARIAH", r3: 3.69, r1: 5.67},
-    {id: 5, name:"DPLK BRI BERIMBANG SYARIAH", r3: 0.23, r1: 5.67},
-  ]
 
   const testimonials = [
     {id: 1, name:"Prisca Yuliana", star: 5},
@@ -51,11 +24,9 @@ const Home = () => {
   ]
 
     const sliderRef = useRef(null);
-  
     const next = () => {
       sliderRef.current.slickNext();
     };
-  
     const previous = () => {
       sliderRef.current.slickPrev();
     };
@@ -100,105 +71,19 @@ const Home = () => {
           </svg>
         </section>
 
-        
+      {/* Features Section  */}
       <section className="mb-32">
-      <div className="container my-12 mx-auto md:px-6">
-          <h5 className="text-center text-sky-800 text-sm font-bold font-['DM Sans'] uppercase leading-tight tracking-widest">
-          Features
-          </h5>
-          <h2 className="text-center text-gray-700 text-3xl font-bold font-['DM Sans'] leading-10">Keuntungan DPLK BRI
-          </h2>
-
-          <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12 gap-y-16 mt-20">
-
-            {features.map((feature)=>(
-              <FeatureCard key={feature.id} text={feature.text} desc={feature.desc} />
-            ))}
-
-          </div>
-        </div>
-      </section>
-      <section className="mb-32">
-        <div className="container my-12 mx-auto md:px-6">
-            <h5 className="text-center text-sky-800 text-sm font-bold font-['DM Sans'] uppercase leading-tight tracking-widest">
-            Package
-            </h5>
-            <h2 className="text-center text-gray-700 text-3xl font-bold font-['DM Sans'] leading-10">Paket Pilihan Investasi
-            </h2>
-            <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12 mt-20">
-
-            {packages.map((pack)=>(
-              <PackageCard key={pack.id} title={pack.text} points={pack.points} />
-            ))}
-
-            </div>
-            
-        </div>
+        <Features />
       </section>
 
+      {/* Packages Section  */}
+      <section className="mb-32">
+        <Packages />
+      </section>
+
+      {/* Invest Section  */}
       <section className="py-12 bg-slate-50">
-        <div className="container my-12 mx-auto md:px-6">
-            <h5 className="text-center text-sky-800 text-sm font-bold font-['DM Sans'] uppercase leading-tight tracking-widest">
-            Paket Investasi
-            </h5>
-            <h2 className="text-center mb-6 text-gray-700 text-3xl font-bold font-['DM Sans'] leading-10">NAV Harian (Rupiah)
-            </h2>
-
-            <div className="container mx-auto px-4 py-8 bg-white border rounded-lg">
-            <p className="text-slate-800 text-lg mb-4 font-medium font-['DM Sans'] leading-tight">Paket Investasi</p>
-              <div className="w-full mx-auto">
-                <table className="min-w-full bg-white">
-                  <thead>
-                    <tr className="border-y">
-                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
-                        Name
-                      </th>
-                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
-                        NAV/Unit
-                      </th>
-                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
-                        Return 1 Hari Terakhir
-                      </th>
-                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
-                      Return 30 Hari Terakhir
-                      </th>
-                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
-                        Return 1 Tahun Terakhir
-                      </th>
-                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-gray-700 text-sm font-medium font-['DM Sans']">
-                        Return 3 Tahun Terakhir
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {invest.map((inv) => (
-                      <tr key={inv.id} className="border-t border-gray-200 text-gray-700 text-sm font-normal font-['DM Sans'] leading-tight">
-                        <td className="px-6 py-4 whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
-                          {inv.name}
-                        </td>
-                        <td className="px-6 py-4 text-center whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
-                          99
-                        </td>
-                        <td className="px-6 py-4 text-center whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
-                          0.01
-                        </td>
-                        <td className="px-6 py-4 text-center whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
-                          {inv.r3}
-                        </td>
-                        <td className="px-6 py-4 text-center whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
-                          {inv.r1}
-                        </td>
-                        <td className="px-6 py-4 text-center whitespace-no-wrap text-gray-500 text-sm font-normal font-['DM Sans'] leading-tight">
-                          14.18
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            
-        </div>
+        <Invest />
       </section>
 
       <section className="mb-16">
@@ -232,8 +117,7 @@ const Home = () => {
       </section>
 
       <section className="bg-white mb-16">
-          <div className="max-w-screen-lg px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:flex justify-between items-center">
-
+        <div className="max-w-screen-lg px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:flex justify-between items-center">
           <div className="hidden lg:block">
             <img src={Phone} alt="mockup" style={{ width: '725px', height: 'auto' }} />
           </div>
@@ -250,13 +134,41 @@ const Home = () => {
               </a>
             </div>
           </div>
-            
-            
-          </div>
-        </section>
-        <div className="w-full py-4 bg-sky-800 justify-center items-center inline-flex">
-          <p className="text-center text-white text-base font-normal font-['DM Sans'] leading-relaxed">© 2023 PT.Bank Rakyat Indonesia (Persero) Tbk. | All Rights Reserved.</p>
         </div>
+      </section>
+        
+      <section className='border-t'>
+        <div className="pl-44 pr-96 py-20 rounded-lg border-slate-200 justify-start items-start gap-16 inline-flex">
+          <div className="flex-col justify-center items-start gap-8 inline-flex">
+            <div className="text-sky-800 text-xl font-medium font-['DM Sans'] leading-relaxed">BRI Kantor Pusat</div>
+            <div className="text-gray-700 text-sm font-normal font-['DM Sans'] leading-tight">📌 Gedung BRI II Lt 30, <br/>Jl. Jendral Sudirman Kav. 44-46, Jakarta 10210</div>
+          </div>
+          <div className="rounded-lg flex-col justify-center items-start gap-7 inline-flex">
+            <div className="text-sky-800 text-xl font-medium font-['DM Sans'] leading-relaxed">Hubungi Kami</div>
+            <div className="pb-px rounded-lg flex-col justify-start items-start gap-2.5 flex">
+              <div className="text-gray-700 text-base font-normal font-['DM Sans'] leading-relaxed">📞 0804 130 3030</div>
+              <div className="text-gray-700 text-base font-normal font-['DM Sans'] leading-relaxed">📨 dplk@bri.co.id</div>
+            </div>
+          </div>
+          <div className="rounded-lg flex-col justify-center items-start gap-7 inline-flex">
+            <div className=" text-sky-800 text-xl font-medium font-['DM Sans'] leading-relaxed">Tautan</div>
+            <div className="pb-px rounded-lg flex-col justify-start items-start gap-2.5 flex">
+              <a href='?' className="text-gray-700 text-base font-normal font-['DM Sans'] leading-relaxed">Produk BRI</a>
+              <a href='?' className="text-gray-700 text-base font-normal font-['DM Sans'] leading-relaxed">Deposit Interest</a>
+              <a href='?' className="text-gray-700 text-base font-normal font-['DM Sans'] leading-relaxed">Rates</a>
+              <a href='?' className="text-gray-700 text-base font-normal font-['DM Sans'] leading-relaxed">Loan Interest Rates</a>
+              <a href='?' className="text-gray-700 text-base font-normal font-['DM Sans'] leading-relaxed">Fees & Rates</a>
+              <a href='?' className="text-gray-700 text-base font-normal font-['DM Sans'] leading-relaxed">Whistleblowing System</a>
+              <a href='?' className="text-gray-700 text-base font-normal font-['DM Sans'] leading-relaxed">Karier</a>
+            </div>
+          </div>
+        </div>
+      </section>
+        
+        {/* Footer */}
+      <div className="w-full py-4 bg-sky-800 justify-center items-center inline-flex">
+        <p className="text-center text-white text-base font-normal font-['DM Sans'] leading-relaxed">© 2023 PT.Bank Rakyat Indonesia (Persero) Tbk. | All Rights Reserved.</p>
+      </div>
     </>
   )
 }
