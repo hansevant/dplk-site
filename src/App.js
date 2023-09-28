@@ -1,11 +1,11 @@
-import './App.css';
 import {BrowserRouter, Routes,Route} from "react-router-dom";
 import Home from './pages/Home';
 import Login from './pages/Login';
-import NotFound from './pages/NotFound';
-import PortalPage from './pages/PortalPage';
-import DetailPage from './pages/DetailPage';
+import PortalPage from './pages/Auth/PortalPage';
+import DetailPage from './pages/Auth/DetailPage';
 import ComingSoon from './pages/ComingSoon';
+import About from "./pages/About";
+import Simulation from "./pages/Simulation";
 // import AuthContextProvider from './context/AuthContext';
 
 export default function App() {
@@ -14,11 +14,12 @@ export default function App() {
       {/* <AuthContextProvider> */}
         <Routes>
           <Route path="/" element={<Home />}/> 
+          <Route path="/about-us" element={<About />}/> 
+          <Route path="/simulation" element={<Simulation />}/> 
           <Route path="/login" element={<Login />}/> 
           <Route path="/portal" element={<PortalPage />}/> 
           <Route path="/detail" element={<DetailPage />}/> 
-          <Route path="/soon" element={<ComingSoon />}/> 
-          <Route path="*" element={<NotFound/>}/> 
+          <Route path="*" element={<ComingSoon />}/> 
         </Routes>
       {/* </AuthContextProvider> */}
     </BrowserRouter>

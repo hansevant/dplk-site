@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import Navbar2 from '../components/Navbar2'
+import Navbar2 from '../../components/Navbar2'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { CardProfile } from '../components/CardProfile';
+import { CardProfile } from '../../components/CardProfile';
 
 const CardComponent2 = ({Title}) => {
 

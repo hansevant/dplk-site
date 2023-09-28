@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Navbar2 from '../components/Navbar2'
+import Navbar2 from '../../components/Navbar2'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { CardProfile } from '../components/CardProfile';
-import { CardDocument } from '../components/CardDocuments';
-import { CardSaldo } from '../components/CardSaldo';
+import { CardProfile } from '../../components/CardProfile';
+import { CardDocument } from '../../components/CardDocuments';
+import { CardSaldo } from '../../components/CardSaldo';
 
 const PortalPage = () => {
   
