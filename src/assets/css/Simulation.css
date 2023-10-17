@@ -1,0 +1,12 @@
+/* Custom CSS for the slider handle */
+
+.range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px ; /* Set the width to make it rectangular */
+    height: 16px  ; /* Set the height to make it rectangular */
+    background-color: #007BFF;/* Blue color */
+    cursor: pointer ;
+    border-radius: 4px;
+    border: 2px solid #007BFF;
+  }
