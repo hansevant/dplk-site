@@ -14,7 +14,7 @@ export default function App() {
       {/* <AuthContextProvider> */}
         <Routes>
           <Route path="/" element={<Home />}/> 
-          <Route path="/about-us" element={<About />}/> 
+          <Route path="/about" element={<About />}/> 
           <Route path="/simulation" element={<Simulation />}/> 
           <Route path="/login" element={<Login />}/> 
           <Route path="/portal" element={<PortalPage />}/> 

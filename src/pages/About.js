@@ -7,10 +7,10 @@ const About = () => {
     <div>
         <Navbar />
         <div className='mx-auto text-center'>
-            <p className="my-6 text-gray-700 text-4xl font-bold font-['DM Sans'] leading-10">Profil DPLK BRI</p>
-            <p className="text-gray-700 text-xl font-normal font-['DM Sans'] leading-normal">Semua yang perlu Anda ketahui tentang DPLK</p>
+            <p className="mt-3text-gray-700 text-4xl font-bold font-['DM Sans'] leading-10">Profil DPLK BRI</p>
+            <p className=" my-6 text-gray-700 text-xl font-normal font-['DM Sans'] leading-normal">Semua yang perlu Anda ketahui tentang DPLK</p>
             <img
-                className="mx-auto my-12 max-w-full h-auto"
+                className="mx-auto mb-6 max-w-full h-auto"
                 src={Image}
                 alt='img'
             />
