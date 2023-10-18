@@ -13,7 +13,7 @@ const Navbar = () => {
             <li><a href='about' className='hover:text-[#014A94]'>Tentang Kami</a></li>
             <li><a href='simulation' className='hover:text-[#014A94]'>Simulasi</a></li>
             <li><a href='soon' className='hover:text-[#014A94]'>Informasi</a></li>
-            <li><a href='soon' className='hover:text-[#014A94]'>FAQ</a></li>
+            <li><a href='faq' className='hover:text-[#014A94]'>FAQ</a></li>
             <li><a href='soon' className='hover:text-[#014A94]'>Hubungi Kami</a></li>
         </ul>
         <div>
