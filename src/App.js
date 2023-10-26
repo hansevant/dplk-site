@@ -7,6 +7,7 @@ import ComingSoon from './pages/ComingSoon';
 import About from "./pages/About";
 import Simulation from "./pages/Simulation";
 import Faq from "./pages/Faq";
+import Contact from "./pages/Contact.js";
 // import AuthContextProvider from './context/AuthContext';
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/about" element={<About />}/> 
           <Route path="/simulation" element={<Simulation />}/> 
           <Route path="/faq" element={<Faq />}/> 
+          <Route path="/contact" element={<Contact />}/> 
           <Route path="/login" element={<Login />}/> 
           <Route path="/portal" element={<PortalPage />}/> 
           <Route path="/detail" element={<DetailPage />}/> 

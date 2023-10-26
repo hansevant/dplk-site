@@ -14,7 +14,7 @@ const Navbar = () => {
             <li><a href='simulation' className='hover:text-[#014A94]'>Simulasi</a></li>
             <li><a href='soon' className='hover:text-[#014A94]'>Informasi</a></li>
             <li><a href='faq' className='hover:text-[#014A94]'>FAQ</a></li>
-            <li><a href='soon' className='hover:text-[#014A94]'>Hubungi Kami</a></li>
+            <li><a href='contact' className='hover:text-[#014A94]'>Hubungi Kami</a></li>
         </ul>
         <div>
             <a href='/login' className='text-lg bg-gray-100 text-blue-800 font-semibold rounded-md px-7 py-2 hover:bg-blue-100 transition'>
