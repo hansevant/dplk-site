@@ -40,7 +40,7 @@ const PortalPage = () => {
   }
 
   return (
-    <div className='bg-slate-200 flex flex-col'>
+    <div className='bg-white flex flex-col'>
       <Navbar2 />
 
       <CardProfile Title="User Profile" Data={data}/>

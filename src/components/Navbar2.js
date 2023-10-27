@@ -40,7 +40,7 @@ const Navbar2 = () => {
               </a>
           </div>
       </div>
-      <div className='container border-b-2 border-t-2 border-[#D4DBEA] max-w-full mx-auto flex flex-row py-5 items-center'>
+      <div className='container border-y-[1.2px] border-[#D4DBEA] max-w-full mx-auto flex flex-row py-5 items-center'>
         <ul className='flex gap-5 ml-[72px] text-slate-700 font-medium px-7 '>
             <li>
               <Link to="/portal" className="flex items-center hover:text-slate-950">

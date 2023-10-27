@@ -90,7 +90,7 @@ const DetailPage = () => {
     },[])
 
   return (
-    <div className='bg-slate-200 flex flex-col h-screen'>
+    <div className='bg-white flex flex-col h-screen'>
     <Navbar2 />
 
     <CardProfile Title="User Profile" Data={data} />
