@@ -20,6 +20,11 @@ const Login = () => {
   const [id, setId] = React.useState(null);
   const [password, setPassword] = React.useState(null);
 
+  const handleInputChange = (e) => {
+    const inputValue = e.target.value.replace(/\D/g, ''); // Use a regular expression to remove non-numeric characters
+    setId(inputValue);
+  };
+
   useEffect(()=>{
     if(idl)navigate('/portal')
   },[idl,navigate])
@@ -54,11 +59,12 @@ const Login = () => {
               User ID
             </label>
             <input
-              type="number"
+              type="text"
               id="username"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               placeholder="Masukkan user ID Anda"
-              onChange={(e) => setId(e.target.value)}
+              value={id}
+              onChange={handleInputChange}
             />
           </div>
           <div>

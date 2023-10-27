@@ -5,13 +5,21 @@ import Image from '../assets/img/Map.png'
 const Contact = () => {
 
     const [selectedOption, setSelectedOption] = React.useState(null);
+    const [selectedOption2, setSelectedOption2] = React.useState(null);
     const [firstName, setFirstName] = React.useState(null);
     const [lastName, setLastName] = React.useState(null);
     const [email, setEmail] = React.useState(null);
     const [phone, setPhone] = React.useState(null);
+    const [message, setMessage] = React.useState(null);
+    
     const handleOptionChange = (value) => {
         setSelectedOption(value);
     }
+
+    
+  const handleOptionChange2 = (e) => {
+    setSelectedOption2(e.target.value);
+  };
   return (
     <div>
     <Navbar />
@@ -110,14 +118,40 @@ const Contact = () => {
 
                 <div className='mt-3'>
                     <label htmlFor="phone" className="block font-medium text-gray-700">
-                    Nomor Handphone
+                        Nomor Handphone
                     </label>
                     <input
-                    type="text"
-                    id="phone"
+                        type="text"
+                        id="phone"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        placeholder="Masukkan nomor telepon Anda"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
+                    />
+                </div>
+
+                <div className='mt-3'>
+                    <p className="my-2 text-slate-800 text-lg font-medium font-['DM Sans'] leading-tight">Apa yang bisa kita bantu?</p>
+                    <select
+                        value={selectedOption2}
+                        onChange={handleOptionChange2}
+                        className="w-full border border-gray-300 p-2 rounded mb-2"
+                    >
+                        <option value="Pembayaran Manfaat">Pembayaran Manfaat</option>
+                        <option value="option2">Berimbang Syariah</option>
+                        <option value="option3">Paket Konvensional</option>
+                    </select>
+                </div>
+
+                
+                <div className='mt-3'>
+                    <label htmlFor="message" className="block font-medium text-gray-700">
+                    Pesan
+                    </label>
+                    <textarea
+                    id="message"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                    placeholder="Masukkan nomor telepon Anda"
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e) => setMessage(e.target.value)}
                     />
                 </div>
 

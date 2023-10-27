@@ -27,7 +27,7 @@ const Home = () => {
         <div className="max-w-screen-lg px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:flex justify-between items-center">
 
           <div className="lg:col-span-5">
-            <h1 className="text-gray-700 text-5xl font-bold font-['DM Sans'] leading-10">Selamat Datang di DPLK BRI</h1>
+            <h1 className="text-gray-700 text-5xl font-bold font-['DM Sans'] leading-none">Selamat Datang di DPLK BRI</h1>
             <p className="text-gray-700 text-lg font-normal font-['DM Sans'] mt-6 leading-relaxed">BRI DPLK | Dana Pensiun Lembaga Keuangan Bank Rakyat Indonesia (DPLK BRI) menyelenggarakan Program Pensiun Iuran Pasti (PPIP) bagi peserta Individu maupun Korporasi, serta Program Pensiun Untuk Kompensasi Pesangon (PPUKP) bagi peserta Korporasi.</p>
             <a href="https://www.youtube.com/watch?v=X9eFHmCsQ2Y&pp=ygUIZHBsayBicmk%3D" className="text-center text-gray-700 text-lg font-semibold font-['Inter'] leading-10 mt-6 inline-flex items-center px-5 py-1 rounded-lg border hover:bg-gray-200 transition border-gray-700">
               <FiPlayCircle size={20} style={{ color: 'rgb(55 65 81)' }}/>
@@ -70,7 +70,7 @@ const Home = () => {
             <h2 className="text-sky-800 text-sm font-bold font-['DM Sans'] uppercase leading-tight tracking-widest">DPLK BRIMO</h2>
             <h1 className="text-gray-700 text-5xl font-bold font-['DM Sans'] mt-3 leading-10">Kini DPLK BRI tersedia di BRIMO</h1>
             <p className="text-gray-700 text-lg font-normal font-['DM Sans'] mt-6 leading-relaxed">Segera daftarkan ke unit kerja BRI terdekat dan dapatkan di Apps Store dan Play Store.</p>
-            <div className="mt-10">
+            <div className="mt-10 flex gap-2">
               <a href='https://play.google.com/store/apps/details?id=id.co.bri.brimo&pcampaignid=web_share'>
                 <img src={GooglePlay} alt="mockup" style={{ width: 'auto', height: 'auto' }} />
               </a>

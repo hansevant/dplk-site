@@ -3,8 +3,8 @@ import React from 'react'
 const Input = ({Clicks}) => {
     
   const [setoranAwal, setSetoranAwal] = React.useState(0); // Initial range value
-  const [iuranTahun, setIuranTahun] = React.useState(0); // Initial range value
-  const [iuranBulan, setIuranBulan] = React.useState(0); // Initial range value
+  const [iuranTahun, setIuranTahun] = React.useState(1); // Initial range value
+  const [iuranBulan, setIuranBulan] = React.useState(50000); // Initial range value
   const [usia, setUsia] = React.useState(0); // Initial range value
   const [usiaPensiun, setUsiaPensiun] = React.useState(0); // Initial range value
   const [selectedOption, setSelectedOption] = React.useState("Pasar Syariah"); // Initial selected option
@@ -45,8 +45,9 @@ const Input = ({Clicks}) => {
                 <div className="bg-gray-300 p-2 rounded-l">Rp.</div>
                 <input
                     type="number"
-                    value={setoranAwal}
+                    value={setoranAwal ? setoranAwal : ''}
                     onChange={handleSetoranAwal}
+                    placeholder='Rp. 100,000.00'
                     className="w-full border border-gray-300 p-2 rounded-r"
                 />
                 </div>
@@ -66,16 +67,17 @@ const Input = ({Clicks}) => {
                 <div className="flex mb-[-15px]">
                 <input
                     type="number"
-                    value={usia}
+                    value={usia ? usia : ''}
                     onChange={handleUsia}
+                    placeholder='18 Tahun'
                     className="w-full border border-gray-300 p-2 rounded-l"
                 />
                 <div className="bg-gray-300 p-2 rounded-r">Tahun</div>
                 </div>
                 <input
                     type="range"
-                    min="0"
-                    max="100"
+                    min="18"
+                    max="60"
                     step="1"
                     value={usia}
                     onChange={handleUsia}
@@ -101,7 +103,7 @@ const Input = ({Clicks}) => {
                 </div>
                 <input
                 type="range"
-                min="0"
+                min="1"
                 max="100"
                 step="1"
                 value={iuranTahun}
@@ -115,16 +117,17 @@ const Input = ({Clicks}) => {
                 <div className="flex mb-[-15px]">
                 <input
                     type="number"
-                    value={usiaPensiun}
+                    value={usiaPensiun ? usiaPensiun : ''}
                     onChange={handleUsiaPensiun}
+                    placeholder='40 Tahun'
                     className="w-full border border-gray-300 p-2 rounded-l"
                 />
                 <div className="bg-gray-300 p-2 rounded-r">Tahun</div>
                 </div>
                 <input
                 type="range"
-                min="0"
-                max="100"
+                min="40"
+                max="60"
                 step="1"
                 value={usiaPensiun}
                 onChange={handleUsiaPensiun}
@@ -154,8 +157,8 @@ const Input = ({Clicks}) => {
             className="w-full border border-gray-300 p-2 rounded mb-2"
         >
             <option value="Pasar Syariah">Pasar Syariah</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+            <option value="option2">Berimbang Syariah</option>
+            <option value="option3">Paket Konvensional</option>
         </select>
             
         <button className="bg-amber-500  mt-2 text-white rounded px-16 py-3 hover:bg-amber-600 transition" onClick={Clicks}>
