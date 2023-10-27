@@ -7,11 +7,7 @@ const Faq = () => {
   const accordionItems = [
     {
       title: 'Bagaimana cara login DPLK pada Microsite?',
-      content: 'Content for Section 1',
-    },
-    {
-      title: 'Apakah DPLK bisa untuk yang tidak bekerja atau hanya untuk yang sudah bekerja saja?',
-      content: 'Content for Section 2',
+      content: "Username : 7 Digit CIF DPLK</br>Password: 6 Digit tanggal lahir + 7 digit CIF</br>Pengguna juga dapat melakukan cek saldo melalui aplikasi BRImo",
     },
     {
       title: 'Kapan dana efektif masuk rekening?',
@@ -35,9 +31,9 @@ const Faq = () => {
     <div>
     <Navbar />
         <div className='mx-auto text-center flex flex-col items-center'>
-            <p className="mt-3 text-gray-700 text-4xl font-bold font-['DM Sans'] leading-10">Profil DPLK BRI</p>
-            <p className="my-6 text-gray-700 text-xl font-normal font-['DM Sans'] leading-normal">Semua yang perlu Anda ketahui tentang Produk</p>
-            <div className='w-[768px]'>
+            <p className="mt-6 text-gray-700 text-4xl font-bold font-['DM Sans'] leading-10">Profil DPLK BRI</p>
+            <p className="mb-6 mt-3 text-gray-700 text-xl font-normal font-['DM Sans'] leading-normal">Semua yang perlu Anda ketahui tentang Produk</p>
+            <div className='w-[768px] mt-6'>
                 <Accordion items={accordionItems} />
             </div>
         </div>
