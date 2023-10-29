@@ -15,7 +15,7 @@ const SliderCard = ({ name, star, position, img }) => {
                 <p className="text-gray-700 text-base font-bold font-['DM Sans'] leading-snug">{position}</p>
                 <p className="text-slate-500 text-base font-normal font-['DM Sans'] leading-normal">Saya sangat senang dengan pelayanan yang diberikan oleh DPLK BRI. Tim mereka sangat profesional dan membantu saya dengan semua pertanyaan saya mengenai dana pensiun saya. </p>
                 <div className="h-14 pr-24 rounded-lg justify-start items-center mt-5 gap-5 inline-flex">
-                    <img className="w-14 h-14 rounded-full object-cover" src={img} alt='ava' />
+                <img className="w-14 h-14 rounded-full object-cover aspect-w-1 aspect-h-1" src={img} alt='ava' />
                     <div className="self-stretch pb-px rounded-lg flex-col justify-start items-start gap-0.5 inline-flex">
                         <div className="text-gray-700 text-base font-bold font-['DM Sans'] leading-snug">{name}</div>
                         <div className="text-blue-400 text-base font-medium font-['DM Sans'] leading-tight">@{name.replace(/\s+/g, '_').toLowerCase()}</div>
