@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiDownload } from 'react-icons/fi';
+import Regulasi from '../assets/docs/Regulasi.pdf'
 import Navbar from '../components/Navbar';
 
 const Information = () => {
@@ -57,7 +58,9 @@ const Information = () => {
                 >
                     <div className="w-96 h-16 items-center bg-white p-2.5 rounded-lg flex-col justify-center gap-2.5 inline-flex">
                         <div className="justify-start items-center gap-2.5 inline-flex">
-                            <p className="w-72 text-sky-800 text-base font-medium font-['DM Sans'] leading-snug">Content for {tab.cat}</p>
+                            <a href={Regulasi} target='_blank' rel="noreferrer">
+                                <p className="w-72 text-sky-800 text-base font-medium font-['DM Sans'] leading-snug">Content for {tab.cat}</p>
+                            </a>
                             <div className='p-3 bg-indigo-50 text-[#014A94]'>
                                 <FiDownload size={20} />
                             </div>
