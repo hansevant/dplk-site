@@ -138,7 +138,7 @@ const Information = () => {
         tab.doc.map((document) => (
             <div key={document.docId}  className="flex m-2 w-96 justify-between border border-slate-300 items-center bg-white p-2.5 rounded-lg">
               <a href={Regulasi} target="_blank" rel="noreferrer">
-                <p className="text-sky-800 text-base font-medium font-['DM Sans'] leading-snug">
+                <p className="text-sky-800 w-72 text-base font-medium font-['DM Sans'] leading-snug">
                   Content for {document.title}
                 </p>
               </a>
@@ -147,7 +147,7 @@ const Information = () => {
               </div>
             </div>
         ))
-      ) : null}
+      ) : (<>no files</>)}
     </div>
   ))}
 </div>
