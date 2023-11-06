@@ -31,7 +31,7 @@ const Home = () => {
             <p className="text-gray-700 text-lg font-normal font-['DM Sans'] mt-6 leading-relaxed">BRI DPLK | Dana Pensiun Lembaga Keuangan Bank Rakyat Indonesia (DPLK BRI) menyelenggarakan Program Pensiun Iuran Pasti (PPIP) bagi peserta Individu maupun Korporasi, serta Program Pensiun Untuk Kompensasi Pesangon (PPUKP) bagi peserta Korporasi.</p>
             <a href="https://www.youtube.com/watch?v=X9eFHmCsQ2Y&pp=ygUIZHBsayBicmk%3D" className="text-center text-gray-700 text-lg font-semibold font-['Inter'] leading-10 mt-6 inline-flex items-center px-5 py-1 rounded-lg border hover:bg-gray-200 transition border-gray-700">
               <FiPlayCircle size={20} style={{ color: 'rgb(55 65 81)' }}/>
-              <p className='ml-2'>Tonton Video</p>
+              <p className="ml-2 text-center text-gray-700 text-lg font-semibold font-['Inter'] leading-10">Tonton Video</p>
             </a>
           </div>
           
