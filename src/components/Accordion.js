@@ -15,7 +15,7 @@ const AccordionItem = ({ title, content, isOpen, toggleAccordion }) => (
         isOpen ? 'opacity-100' : 'opacity-0 h-0'
       }`}
     >
-      <div className='text-left' dangerouslySetInnerHTML={{ __html: content }} />
+      <div className='text-left'>{content}</div>
     </div>
     <hr className='mt-3'/>
   </div>

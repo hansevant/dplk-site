@@ -2,7 +2,7 @@ import React from 'react'
 import LogoNav from '../assets/img/picwish.png'
 import { Link, useNavigate } from 'react-router-dom'
 import LogoutPopup from './LogoutPopup'
-import { FiHome, FiLogOut, FiSettings } from 'react-icons/fi'
+import { FiHome, FiLogOut } from 'react-icons/fi'
 
 const Navbar2 = () => {
 
@@ -48,12 +48,12 @@ const Navbar2 = () => {
                 Beranda
               </Link>  
             </li>
-            <li>
+            {/* <li>
               <Link to="/soon" className="flex items-center hover:text-slate-950">
                 <FiSettings size={16} className="mr-2" />
                 Pengaturan
               </Link>
-            </li>
+            </li> */}
             <li><Link to="#" onClick={openLogoutPopup} className="flex items-center hover:text-slate-950">
             <FiLogOut size={16} className="mr-2" />Log-Out</Link></li>
         </ul>
