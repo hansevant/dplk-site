@@ -1,37 +1,43 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import Slider from "react-slick";
 import SliderCard from './Card/SliderCard';
+import axios from 'axios';
 
 const Testi = () => {
 
-  const men = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  const women = 'https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    const testimonials = [
-      {id: 1, name:"Prisca Yuliana", img: women, star: 5, position : 'MANAGER'},
-      {id: 2, name:"Fachrie Malyan", img: men, star: 4, position : 'SENIOR MANAGER'},
-      {id: 3, name:"Ernita Deliami", img: women, star: 5, position : 'MANAGER'},
-      {id: 4, name:"Abizar Ramadhan", img: men, star: 3, position : 'OFFICER'},
-      {id: 4, name:"Ichsan Gifari", img: men, star: 4, position : 'OFFICER'},
-    ]
-  
-      const sliderRef = useRef(null);
-      const next = () => {
-        sliderRef.current.slickNext();
-      };
-      const previous = () => {
-        sliderRef.current.slickPrev();
-      };
-    
-  
-    const settings = {
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      prevArrow: null, // Set to null to hide the previous arrow
-      nextArrow: null, // Set to null to hide the next arrow
-    };
+  const [data, setData] = useState([]);
+
+  const getTesti = async () => {
+    try {
+      const res = await axios.get('http://localhost:5000/testi');
+      setData(res.data.data);
+    } catch (error) {
+      console.error('Error fetching testi:', error);
+    }
+  }
+
+  useEffect(() => {
+    getTesti();
+    // eslint-disable-next-line
+  }, [])
+
+  const sliderRef = useRef(null);
+  const next = () => {
+    sliderRef.current.slickNext();
+  };
+  const previous = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: null, // Set to null to hide the previous arrow
+    nextArrow: null, // Set to null to hide the next arrow
+  };
   
   return (
     
@@ -42,7 +48,7 @@ const Testi = () => {
         <div className="slider-container text-center">
 
             <Slider ref={sliderRef} {...settings}>
-                {testimonials.map((testi) => (
+                {data.map((testi) => (
                 <SliderCard key={testi.id} img={testi.img} position={testi.position} name={testi.name} star={testi.star} />
                 ))}
             </Slider>

@@ -17,8 +17,8 @@ import axios from 'axios';
 const Login = () => {
   const idl = localStorage.getItem("id");
   const navigate = useNavigate();
-  const [id, setId] = React.useState(null);
-  const [password, setPassword] = React.useState(null);
+  const [id, setId] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value.replace(/\D/g, ''); // Use a regular expression to remove non-numeric characters
