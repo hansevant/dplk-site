@@ -34,7 +34,7 @@ const Faq = () => {
       <Navbar />
       <div className="mx-auto text-center flex flex-col items-center">
         <p className="mt-6 text-gray-700 text-4xl font-bold font-['DM Sans'] leading-10">
-          Profil DPLK BRI
+        Pertanyaan yang Sering Diajukan (FAQ)
         </p>
         <p className="mb-6 mt-3 text-gray-700 text-xl font-normal font-['DM Sans'] leading-normal">
           Semua yang perlu Anda ketahui tentang Produk
