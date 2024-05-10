@@ -1,0 +1,26 @@
+### 
+GET http://localhost:5000/users/
+### 
+GET http://localhost:5000/users/1122113
+### Post
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+ "id" : 1122113,
+ "password" : "password"   
+}
+
+### Post
+POST http://localhost:5000/contact
+Content-Type: application/json
+
+{
+    "isClient" : true,
+    "firstName": "Evan",
+    "lastName": "Dimas",
+    "email": "kerjaanhans@gmail.com",
+    "phone": "082155256001",
+    "typeAssistance" : "Help",
+    "message" : "Nothing",
+}

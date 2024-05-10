@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  @@map("users")
+  id        Int      @id
+  fullname  String
+  address   String
+  password  String
+  userBalances UserBalance[]
+  createdAt DateTime  @default(now())
+}
+
+model UserBalance {
+  @@map("user_balances")
+  id        Int      @id @default(autoincrement())
+  user    User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId  Int 
+  va   Int
+  balance  String
+  invPack String
+  createdAt DateTime  @default(now())
+}
+
+model Form{
+  @@map("forms")
+  id  Int @id @default(autoincrement())
+  isClient Boolean
+  firstName String
+  lastName String
+  email String
+  phone String
+  typeAssistance String
+  message String
+  createdAt DateTime  @default(now())
+}
+
+model Testimonial{
+  @@map("testimonials")
+  id Int @id @default(autoincrement())
+  name String
+  position String
+  testi String
+  img String @default("https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png")
+  star Int 
+  createdAt DateTime  @default(now())
+}
+
+model Faq{
+  @@map("faqs")
+  id Int @id @default(autoincrement())
+  question String
+  answer String
+  createdAt DateTime  @default(now())
+}

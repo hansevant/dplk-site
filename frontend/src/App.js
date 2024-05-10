@@ -1,14 +1,14 @@
 import {BrowserRouter, Routes,Route} from "react-router-dom";
-import Home from './pages/Home';
-import Login from './pages/Login';
-import PortalPage from './pages/Auth/PortalPage';
-import DetailPage from './pages/Auth/DetailPage';
-import ComingSoon from './pages/ComingSoon';
-import About from "./pages/About";
-import Simulation from "./pages/Simulation";
-import Faq from "./pages/Faq";
+import Home from './pages/Home.js';
+import Login from './pages/Login.js';
+import PortalPage from './pages/Auth/PortalPage.js';
+import DetailPage from './pages/Auth/DetailPage.js';
+import ComingSoon from './pages/ComingSoon.js';
+import About from "./pages/About.js";
+import Simulation from "./pages/Simulation.js";
+import Faq from "./pages/Faq.js";
 import Contact from "./pages/Contact.js";
-import Information from "./pages/Information";
+import Information from "./pages/Information.js";
 // import AuthContextProvider from './context/AuthContext';
 
 export default function App() {
