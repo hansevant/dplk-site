@@ -9,6 +9,8 @@ const Contact = () => {
 
     const navigate = useNavigate()
 
+    const uri = process.env.REACT_APP_BACKEND_URL;
+
     const [selectedOption, setSelectedOption] = React.useState('');
     const [selectedOption2, setSelectedOption2] = React.useState("Pembayaran Manfaat");
     const [firstName, setFirstName] = React.useState('');
@@ -30,7 +32,7 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/contact", {
+            const response = await axios.post(uri + "/contact", {
                 isClient : selectedOption,
                 firstName,
                 lastName,

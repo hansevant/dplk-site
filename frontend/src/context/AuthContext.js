@@ -7,6 +7,8 @@ const AuthContextProvider = ({ children }) => {
   const [user, setUser] = React.useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const uri = process.env.REACT_APP_BACKEND_URL;
+
   useEffect(() => {
     checkLoginStatus();
   }, []);
@@ -15,7 +17,7 @@ const AuthContextProvider = ({ children }) => {
     const id = localStorage.getItem("Id");
 
     try {
-      const response = await axios.get(`http://localhost:5000/users/${id}`);
+      const response = await axios.get(uri + `/users/${id}`);
 
       if (response.status === 200) {
         setUser(response.data);

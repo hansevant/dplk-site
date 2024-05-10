@@ -6,11 +6,13 @@ import axios from 'axios';
 
 const Testi = () => {
 
+  const uri = process.env.REACT_APP_BACKEND_URL;
+
   const [data, setData] = useState([]);
 
   const getTesti = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/testi');
+      const res = await axios.get(uri + '/testi');
       setData(res.data.data);
     } catch (error) {
       console.error('Error fetching testi:', error);

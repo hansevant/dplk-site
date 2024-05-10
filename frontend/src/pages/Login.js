@@ -15,6 +15,9 @@ import axios from 'axios';
 
 
 const Login = () => {
+
+  const uri = process.env.REACT_APP_BACKEND_URL;
+  
   const idl = localStorage.getItem("id");
   const navigate = useNavigate();
   const [id, setId] = React.useState("");
@@ -33,7 +36,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/users", {
+      const response = await axios.post(uri + "/users", {
         id,
         password,
       });

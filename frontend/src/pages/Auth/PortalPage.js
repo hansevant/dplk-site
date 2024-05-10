@@ -8,13 +8,15 @@ import { CardSaldo } from '../../components/CardSaldo';
 
 const PortalPage = () => {
   
+  const uri = process.env.REACT_APP_BACKEND_URL;
+
   const [isLoading, setIsLoading] = useState(true);
   const id = localStorage.getItem("id");
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const getDataById = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/users/${id}`)
+        const res = await axios.get(uri + `/users/${id}`)
         setData(res.data.data)
         setIsLoading(false);
       } catch (error) {

@@ -8,9 +8,11 @@ const Faq = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const uri = process.env.REACT_APP_BACKEND_URL;
+
   const getFaq = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/faq');
+      const res = await axios.get(uri + '/faq');
       setData(res.data.data);
     } catch (error) {
       console.error('Error fetching faq:', error);
@@ -21,6 +23,7 @@ const Faq = () => {
 
   useEffect(() => {
     getFaq();
+    console.log(process.env.REACT_APP_BACKEND_URL);
     // eslint-disable-next-line
   }, [])
 

@@ -66,17 +66,20 @@ const CardComponent2 = ({Title}) => {
 }
 
 const DetailPage = () => {
-    const id = localStorage.getItem("id");
-    const [data, setData] = React.useState([]);
-    const navigate = useNavigate();
-    const getDataById = async () => {
-        try {
-          const res = await axios.get(`http://localhost:5000/users/${id}`)
-          setData(res.data.data)
-        } catch (error) {
-          navigate('/notfound')
-        }
+
+  const uri = process.env.REACT_APP_BACKEND_URL;
+
+  const id = localStorage.getItem("id");
+  const [data, setData] = React.useState([]);
+  const navigate = useNavigate();
+  const getDataById = async () => {
+    try {
+        const res = await axios.get(uri + `/users/${id}`)
+        setData(res.data.data)
+      } catch (error) {
+        navigate('/notfound')
       }
+    }
 
     useEffect(() =>{
       if (!id) {
